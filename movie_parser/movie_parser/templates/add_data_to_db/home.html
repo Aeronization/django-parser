@@ -1,9 +1,26 @@
 {% load static %}
 
-<html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>The Movie Parser!</title>
+
+    </head>
+
     <body>
         <p>
-            Hello World!!!
+            {% if messages %}
+                {% for message in messages %}
+                    <strong>{{ message|safe }}</strong>
+                {% endfor %}
+            {% endif %}
+        </p>
+
+        <p>
+            If you visit this page, the contents zip file contents should be downloaded and saved.
+            Then it's contents should be added to the database!
+            Check the admin interface!
         </p>
     </body>
 </html>
