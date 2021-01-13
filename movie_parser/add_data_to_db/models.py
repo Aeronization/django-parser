@@ -9,6 +9,9 @@ class Genre(models.Model):
     genre_name = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.genre_name
+
 
 class Movie(models.Model):
     movie_id = models.CharField(max_length=128)
@@ -19,3 +22,6 @@ class Movie(models.Model):
     genre = models.ManyToManyField(Genre, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.movie_title
